@@ -35,24 +35,24 @@ with paramiko.SSHClient() as client:
         out_message = 'output detected'
         
 
-logging.basicConfig(filename="logging_info.log", 
-					format='%(asctime)s %(message)s', 
-					filemode='w') 
 logging.basicConfig(filename='logging_info.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 logger=logging.getLogger() 
-logger.setLevel(logging.INFO) 
+logger.setLevel(logging.DEBUG) 
 
-
+run_amount = input('how many times do you want the program to run?')
+execution_frequency = input('how often do you want the program to run (in seconds)?')
+run_amount = int(run_amount)
+execution_frequency = int(execution_frequency)
 total_time = 0
 
-while(total_time <= 10):
+while(total_time <= run_amount-1):
     total_time += 1
     if out_message == "output detected":
         telebot('',out_message)
-        logging.info('output detected')
+        logging.debug('output detected')
     else:
         telebot(error_msg, out_message)
-        logging.info('There was no output detected, an error was also detected')
-    time.sleep(60)
+        logging.debug('There was no output detected, an error was also detected')
+    time.sleep(execution_frequency)
 
 # ssh kuka@172.27.5.126
