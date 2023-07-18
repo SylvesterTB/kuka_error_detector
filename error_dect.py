@@ -1,5 +1,5 @@
 import paramiko
-from telegram_2 import *
+from telegram import *
 import time
 import logging
 
