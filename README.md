@@ -1,5 +1,7 @@
 # KUKA Error Detector
 
+## Description
+
 - **Product**:
 	- **Develop a small monitoring tool that:**
 		- Runs on my computer
@@ -12,6 +14,7 @@
 		- [GitHub - python-telegram-bot/python-telegram-bot: We have made you a wrapper you can't refuse](https://github.com/python-telegram-bot/python-telegram-bot)
 ![Alt text](image.png)
 
-## note update
+## User guide
 
-## adding another header Sylvester
+- Requirement: Python3 installed
+- To execute call `$ python error_dect.py`

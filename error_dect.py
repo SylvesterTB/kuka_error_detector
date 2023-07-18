@@ -12,6 +12,16 @@ password = 'kuka'
 
 cmd = 'update-agent'
 
+logging.basicConfig(filename='logging_info.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logger=logging.getLogger() 
+logger.setLevel(logging.DEBUG) 
+
+run_amount = input('how many times do you want the program to run?')
+execution_frequency = input('how often do you want the program to run (in seconds)?')
+run_amount = int(run_amount)
+execution_frequency = int(execution_frequency)
+total_time = 0
+
 with paramiko.SSHClient() as client:
 
     client.load_system_host_keys()
@@ -20,10 +30,8 @@ with paramiko.SSHClient() as client:
     (stdin, stdout, stderr) = client.exec_command(cmd)
 
     output = stdout.read()
-    print("output:"+str(output, 'utf8'))
 
     error = stderr.read()
-    print("error:"+str(error, 'utf8'))
 
     if error == '':
         error_msg = ''
@@ -35,15 +43,7 @@ with paramiko.SSHClient() as client:
         out_message = 'output detected'
         
 
-logging.basicConfig(filename='logging_info.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-logger=logging.getLogger() 
-logger.setLevel(logging.DEBUG) 
 
-run_amount = input('how many times do you want the program to run?')
-execution_frequency = input('how often do you want the program to run (in seconds)?')
-run_amount = int(run_amount)
-execution_frequency = int(execution_frequency)
-total_time = 0
 
 while(total_time <= run_amount-1):
     total_time += 1

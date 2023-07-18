@@ -2,7 +2,6 @@ import requests
 
 TOKEN = "6394746388:AAH9cXDsJb3caDc6_3wzuFLFMgnu7t46aH0"
 url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
-print(requests.get(url).json())
 error_message = 'something'
 import requests
 TOKEN = "6394746388:AAH9cXDsJb3caDc6_3wzuFLFMgnu7t46aH0"
@@ -13,7 +12,7 @@ url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={
 
 def telebot(err_msg, out_msg):
     url2 = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={err_msg, out_msg}"
-    print(requests.get(url2).json()) 
+    requests.get(url2).json()
 
 
 
