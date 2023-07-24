@@ -12,7 +12,7 @@
 		- [Telegram Bot API](https://core.telegram.org/bots/api)
 		- [GitHub - go-telegram-bot-api/telegram-bot-api: Golang bindings for the Telegram Bot API](https://github.com/go-telegram-bot-api/telegram-bot-api)
 		- [GitHub - python-telegram-bot/python-telegram-bot: We have made you a wrapper you can't refuse](https://github.com/python-telegram-bot/python-telegram-bot)
-![Alt text](image.png)
+![Alt text](image-1.png)
 
 ## User guide
 
